@@ -1,0 +1,13 @@
+# DIRECTORIES
+
+.idea/
+target/
+
+# FILE PATTERNS
+
+# Vim swap files
+*.swo
+*.swp
+
+# IntelliJ Idea project files
+*.iml
