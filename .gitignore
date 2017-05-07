@@ -11,3 +11,7 @@ target/
 
 # IntelliJ Idea project files
 *.iml
+
+# FILES
+
+tags
