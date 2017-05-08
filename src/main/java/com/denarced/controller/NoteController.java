@@ -1,24 +1,26 @@
 package com.denarced.controller;
 
+import com.denarced.service.NoteService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.LinkedList;
 import java.util.List;
 
 @RestController
 public class NoteController {
-    private List<String> notes = new LinkedList<>();
+    @Autowired
+    private NoteService noteService;
 
     @GetMapping("/api/note")
     public List<String> allNotes() {
-        return notes;
+        return noteService.fetchNotes();
     }
 
     @PostMapping("/api/note")
     public void addNote(@RequestParam String value) {
-        notes.add(value);
+        noteService.addNote(value);
     }
 }
