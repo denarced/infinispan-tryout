@@ -45,6 +45,11 @@
             <artifactId>fluentjdbc</artifactId>
             <version>1.4</version>
         </dependency>
+        <dependency>
+            <groupId>org.infinispan</groupId>
+            <artifactId>infinispan-core</artifactId>
+            <version>9.0.0.Final</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
