@@ -1,8 +1,12 @@
 package com.denarced.service;
 
+import com.denarced.repository.Note;
+
 import java.util.List;
 
 public interface NoteService {
-    void addNote(String value);
-    List<String> fetchNotes();
+    void addNote(Note note);
+    List<Note> fetchNotes();
+
+    Note fetchNote(String uuid);
 }

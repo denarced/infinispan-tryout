@@ -3,6 +3,8 @@ package com.denarced.repository;
 import java.util.List;
 
 public interface NoteRepository {
-    void addNote(String value);
-    List<String> fetchNotes();
+    void addNote(Note note);
+    List<Note> fetchNotes();
+
+    Note fetchNote(String uuid);
 }

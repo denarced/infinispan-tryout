@@ -1,5 +1,6 @@
 package com.denarced;
 
+import com.denarced.repository.Note;
 import org.codejargon.fluentjdbc.api.FluentJdbc;
 import org.codejargon.fluentjdbc.api.FluentJdbcBuilder;
 import org.infinispan.Cache;
@@ -30,12 +31,12 @@ public class InfinispanTryoutApplication {
     }
 
     @Bean
-    public Cache<String,String> infinispanCache() {
+    public Cache<String,Note> infinispanCache() {
         GlobalConfigurationBuilder gcb = GlobalConfigurationBuilder.defaultClusteredBuilder();
         ConfigurationBuilder builder = new ConfigurationBuilder();
         builder
             .clustering()
-            .cacheMode(CacheMode.REPL_SYNC)
+            .cacheMode(CacheMode.INVALIDATION_SYNC)
             .create();
         DefaultCacheManager manager = new DefaultCacheManager(
             gcb.build(),
