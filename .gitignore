@@ -6,12 +6,13 @@ target/
 # FILE PATTERNS
 
 # Vim swap files
+*.log
 *.swo
 *.swp
 
 # IntelliJ Idea project files
 *.iml
 
-# FILES
+# SPECIFIC FILES
 
 tags

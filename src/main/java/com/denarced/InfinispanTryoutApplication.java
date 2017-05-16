@@ -33,8 +33,13 @@ public class InfinispanTryoutApplication {
     public Cache<String,String> infinispanCache() {
         GlobalConfigurationBuilder gcb = GlobalConfigurationBuilder.defaultClusteredBuilder();
         ConfigurationBuilder builder = new ConfigurationBuilder();
-        builder.clustering().cacheMode(CacheMode.REPL_SYNC).create();
-        DefaultCacheManager manager = new DefaultCacheManager(gcb.build(), builder.build());
+        builder
+            .clustering()
+            .cacheMode(CacheMode.REPL_SYNC)
+            .create();
+        DefaultCacheManager manager = new DefaultCacheManager(
+            gcb.build(),
+            builder.build());
         return manager.getCache();
     }
 }
